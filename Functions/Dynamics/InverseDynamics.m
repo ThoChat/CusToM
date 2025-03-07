@@ -22,8 +22,8 @@ function []=InverseDynamics(AnalysisParameters)
 % Georges Dumont
 %________________________________________________________
 
-parfor num_fil = 1:numel(AnalysisParameters.filename)
-    filename = AnalysisParameters.filename{num_fil}(1:end-(numel(AnalysisParameters.General.Extension)-1));
+for num_fil = 1:numel(AnalysisParameters.filename)
+    filename = AnalysisParameters.filename{num_fil}(1:end-(numel(AnalysisParameters.General.Extension)-1))
 
     disp(['Inverse dynamics (' filename ') ...'])
 
@@ -32,7 +32,7 @@ parfor num_fil = 1:numel(AnalysisParameters.filename)
     BiomechanicalModel = BiomechanicalModel.BiomechanicalModel;
     Human_model = BiomechanicalModel.OsteoArticularModel;
     here = pwd ;                                                                   
-    cd(filename)
+   cd(filename)
         ExperimentalData =  load('ExperimentalData.mat');
         ExperimentalData = ExperimentalData.ExperimentalData;
         time = ExperimentalData.Time;
@@ -47,7 +47,7 @@ parfor num_fil = 1:numel(AnalysisParameters.filename)
         PelvisOrientation = InverseKinematicsResults.PelvisOrientation;
     end
     here = pwd ;   
-    cd(filename)   
+   cd(filename)   
         ExternalForcesComputationResults= load('ExternalForcesComputationResults.mat');    
     cd (here) 
     ExternalForcesComputationResults = ExternalForcesComputationResults.ExternalForcesComputationResults;
