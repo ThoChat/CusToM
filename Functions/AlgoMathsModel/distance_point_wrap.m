@@ -34,7 +34,7 @@ if Bone1 == Bone2
     return
 end
 
-% finding the index of common antecedent (ppac:plus proche antecedent commun)
+% finding the index of common antecedent 
 t = 1;
 t1 = find_solid_path(Human_model,Bone1,1);
 t2 = find_solid_path(Human_model,Bone2,1);
@@ -50,11 +50,11 @@ solid1 = t1(ppac_t:end);
 solid2 = t2(ppac_t:end);
 wrap_path = t3(ppac_t:end);
 
-% Direct kinematics initialization (Initialisation de la cinématique directe)
+% Direct kinematics initialization 
 Human_model(ppac).p = zeros(3,1);
 Human_model(ppac).R = eye(3);
 
-% Computation of coordinates of point A (calcul des coordonnées du point A)
+% Computation of coordinates of point A 
 if numel(solid1)==1
     A = Human_model(Bone1).c+Human_model(Bone1).anat_position{Point1,2};
 else
@@ -68,7 +68,7 @@ else
     A = Human_model(l).c_global + Human_model(l).R * Human_model(Bone1).anat_position{Point1,2};
 end
 
-% Computation of coordinates of point B (calcul des coordonnées du point B)
+% Computation of coordinates of point B 
 if numel(solid2)==1
     B = Human_model(Bone2).c+Human_model(Bone2).anat_position{Point2,2};
 else

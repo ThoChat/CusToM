@@ -24,15 +24,15 @@ if j == 0
     return;
 end
 
-i=Human_model(j).mother; % index of the mother solid (numéro de la mère)
+i=Human_model(j).mother; % index of the mother solid 
 if i == 0
-    Human_model(j).pos_pts_anim=[]; % new domain initialisation (on initialise un nouveau domaine)
+    Human_model(j).pos_pts_anim=[]; % new domain initialisation 
 else
-    if Human_model(j).joint == 1    % hinge (liaison pivot)        
+    if Human_model(j).joint == 1    % hinge joint
         Human_model(j).p = Human_model(i).R * Human_model(j).b + Human_model(i).p;
         Human_model(j).R = Human_model(i).R * Rodrigues(Human_model(j).a,q(j)) * Rodrigues(Human_model(j).u,Human_model(j).theta);
     end
-    if Human_model(j).joint == 2    % prismatic joint (liaison glissière)
+    if Human_model(j).joint == 2    % prismatic joint 
         Human_model(j).p = Human_model(i).R * (Human_model(j).b + q(j)*Human_model(j).a) + Human_model(i).p;
         Human_model(j).R = Human_model(i).R * Rodrigues(Human_model(j).u,Human_model(j).theta);
     end
@@ -40,7 +40,7 @@ end
 Human_model(j).pc = Human_model(j).p + Human_model(j).R*Human_model(j).c;
 Human_model(j).Tc_R0_Ri=[Human_model(j).R, Human_model(j).pc ; [0 0 0 1]];
 
-% Each point position computation (Calcul de la position de chaque points)
+% Each point position computation ()
 if Human_model(j).Visual == 1
     for m = 1:size(Human_model(j).anat_position,1)
         Human_model(j).pos_pts_anim = [Human_model(j).pos_pts_anim ... 

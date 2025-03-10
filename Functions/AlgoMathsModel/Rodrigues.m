@@ -15,7 +15,7 @@ function R = Rodrigues(a,q)
 % Authors : Antoine Muller, Charles Pontonnier, Pierre Puchaud and
 % Georges Dumont
 %________________________________________________________
-
+%compute the rodrigues formula for finding a rotation matrix R from an axis a and the rotation angle q
 if isequal(size(a),[0 0]) || isequal(size(q),[0 0])
     R=eye(3);
 else

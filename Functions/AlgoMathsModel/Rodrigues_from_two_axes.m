@@ -15,7 +15,7 @@ function [R]=Rodrigues_from_two_axes(a1,a2)
 % Authors : Antoine Muller, Charles Pontonnier, Pierre Puchaud and
 % Georges Dumont
 %________________________________________________________
-
+%computes the rodrigues formula from 2 axes
 u_r=cross(a1,a2)' / norm(cross(a1,a2));
 y=norm(cross(a1,a2)); %sin theta
 x=dot(a1,a2); %cos theta

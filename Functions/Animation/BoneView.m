@@ -36,7 +36,8 @@ for ii=find([Human_model.Visual])
         if numel(Human_model(ii).visual_file) % a visual could be associated to this solid
             if exist(fullfile(bonespath,Human_model(ii).visual_file),'file') % this visual exists
                 load(fullfile(bonespath,Human_model(ii).visual_file));
-                nb_faces=4500;
+                nb_faces=15000;
+				%nb_faces=4500;
                 if length(t)>nb_faces
                     bone.faces=t;
                     bone.vertices=p;

@@ -94,15 +94,15 @@ for f=f_affich
                 || isequal(AnimateParameters.Mode, 'GenerateAnimate'))
             finv = figure('visible','off');
             if F_seg(1)==0 && length(F_seg)==2
-                h_seg = gpatch(F_seg(2),V_seg,[],0.4*[1 1 1],1,4);
+                h_seg = gpatch(F_seg(2),V_seg,[],0.2*[1 1 1],1,4);
             else
-                h_seg = gpatch(F_seg,V_seg,[],0.4*[1 1 1],1,4);
+                h_seg = gpatch(F_seg,V_seg,[],0.2*[1 1 1],1,4);
             end
             
             copyobj(h_seg,ax);
             close(finv);
         elseif f==f_affich(1)
-            h_seg = gpatch(F_seg,V_seg,[],0.4*[1 1 1],1,4);
+            h_seg = gpatch(F_seg,V_seg,[],0.2*[1 1 1],1,4);
         end
         animStruct.Handles{f} = [animStruct.Handles{f} h_seg];
         animStruct.Props{f} = {animStruct.Props{f}{:},'Vertices'};
@@ -138,11 +138,11 @@ for f=f_affich
                     || isequal(AnimateParameters.Mode, 'Modelling') ...
                     || isequal(AnimateParameters.Mode, 'GenerateAnimate'))
                 finv = figure('visible','off');
-                hc = gpatch(Fbones,X(:,1:3),[227 218 201]/255*0.9,'none');
+                hc = gpatch(Fbones,X(:,1:3),[227 218 201]/255*0.95,'none');
                 copyobj(hc,ax);
                 close(finv);
             elseif f==f_affich(1)
-                hc = gpatch(Fbones,X(:,1:3),[227 218 201]/255*0.9,'none');
+                hc = gpatch(Fbones,X(:,1:3),[227 218 201]/255*0.95,'none');
             end
             animStruct.Handles{f}=[animStruct.Handles{f} hc];
             animStruct.Props{f}={ animStruct.Props{f}{:}, 'Vertices'};

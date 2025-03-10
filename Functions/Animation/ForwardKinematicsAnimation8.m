@@ -37,7 +37,7 @@ if i == 0
     Human_model(j).R = eye(3,3);
     Human_model(j).pos_pts_anim=[]; % initialization of a new domain
 else
-    if Human_model(j).joint == 1  % hinge          
+    if Human_model(j).joint == 1  % hinge joint       
         Human_model(j).p = Human_model(i).R * Human_model(j).b + Human_model(i).p;
         Human_model(j).R = Human_model(i).R * Rodrigues(Human_model(j).a,q(j)) * Rodrigues(Human_model(j).u,Human_model(j).theta);
     end

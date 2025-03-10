@@ -20,7 +20,7 @@ function [Human_model]=sister_actualize(Human_model,j,i)
 %________________________________________________________  
 
 if Human_model(j).sister == 0
-    Human_model(j).sister = i;
+    Human_model(j).sister = i;%add a sister named i to j
     return;
 end
 
